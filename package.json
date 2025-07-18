@@ -1,0 +1,27 @@
+{
+  "name": "backend-tutorial",
+  "version": "9.9.9",
+  "description": "@nvminh162 learn backend nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvminh162/backend-tutorial.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "@nvminh162",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nvminh162/backend-tutorial/issues"
+  },
+  "homepage": "https://github.com/nvminh162/backend-tutorial#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
