@@ -4,6 +4,7 @@
   "description": "@nvminh162 learn backend nodejs",
   "main": "server.js",
   "scripts": {
+    "watch": "webpack --watch --progress --colors --config webpack.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
