@@ -1,0 +1,9 @@
+services:
+  db-mysql:
+    image: mysql:5.7.40
+    restart: always
+    environment:
+      - MYSQL_DATABASE=nvminh162
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3307:3306"
