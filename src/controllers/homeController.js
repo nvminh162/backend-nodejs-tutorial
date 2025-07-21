@@ -1,15 +1,14 @@
 const connection = require("../config/database");
 
 const getHomePage = (req, res) => {
-  let users = [];
-  connection.query("select * from Users u", function (err, results, fields) {
-    users = results;
-  });
-  console.log("check user ", users);
-
   res.render("home");
+};
+
+const postCreateUser = (req, res) => {
+  console.log(req.body);
 };
 
 module.exports = {
   getHomePage,
+  postCreateUser,
 };
