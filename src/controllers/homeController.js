@@ -5,7 +5,18 @@ const getHomePage = (req, res) => {
 };
 
 const postCreateUser = (req, res) => {
-  console.log(req.body);
+  const { email, name, city } = req.body
+  connection.query(
+    `
+    INSERT INTO Users (email, name, city)
+    VALUES (?,?,?)
+    `,
+    [email, name, city],
+    function (err, results) {
+      console.log(results);
+      res.send('Success')
+    }
+  )
 };
 
 module.exports = {
