@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-}
-
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -38,161 +32,18 @@ body {
   color: white;
 }
 
-/* Beautiful Form Styling */
 .form-add-new {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  transform: translateY(0);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-add-new:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.form-add-new fieldset {
-  border: none;
-  padding: 40px 30px 30px 30px;
-  background: transparent;
-}
-
-.form-add-new legend {
-  color: #333;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 5;
-  background: linear-gradient(135deg, #04AA6D, #02c473);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-.form-add-new legend::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(135deg, #04AA6D, #02c473);
-  border-radius: 2px;
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 
 .input-group {
-  margin-bottom: 25px;
-  position: relative;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #555;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.input-group input[type="text"] {
-  width: 100%;
-  padding: 15px 20px;
-  border: 2px solid #e0e0e0;
-  border-radius: 50px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: #fafafa;
-  outline: none;
-}
-
-.input-group input[type="text"]:focus {
-  border-color: #04AA6D;
-  background: white;
-  box-shadow: 0 0 0 4px rgba(4, 170, 109, 0.1);
-  transform: translateY(-2px);
-}
-
-.input-group input[type="text"]:hover {
-  border-color: #04AA6D;
-  background: white;
-}
-
-/* Beautiful Button Styling */
-.form-add-new div:last-child {
-  text-align: center;
-  margin-top: 30px;
+  padding: 10px;
 }
 
 button {
-  background: linear-gradient(135deg, #04AA6D, #02c473);
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 50px;
+  margin: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 20px rgba(4, 170, 109, 0.3);
-  position: relative;
-  overflow: hidden;
 }
 
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-button:hover::before {
-  left: 100%;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(4, 170, 109, 0.4);
-  background: linear-gradient(135deg, #02c473, #04AA6D);
-}
-
-button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 15px rgba(4, 170, 109, 0.3);
-}
-
-/* Enhanced input focus effects */
-.input-group {
-  overflow: hidden;
-}
-
-.input-group::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(135deg, #04AA6D, #02c473);
-  transition: width 0.3s ease;
-}
-
-.input-group input[type="text"]:focus + ::after,
-.input-group:focus-within::after {
-  width: 100%;
-}
