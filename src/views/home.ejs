@@ -4,33 +4,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10;
+        padding: 15 20;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      tr:hover {
+        background-color: pink;
+      }
+    </style>
   </head>
   <body>
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <a class="active" href="/">Home</a>
+      <a href="/create">Create User</a>
     </div>
-    <form action="/create-user" method="POST" class="form-add-new">
-      <fieldset>
-        <legend>Add New User</legend>
-        <div class="input-group">
-          <label>Email</label>
-          <input name="email" type="text" />
-        </div>
-        <div class="input-group">
-          <label>Name</label>
-          <input name="name" type="text" />
-        </div>
-        <div class="input-group">
-          <label>City</label>
-          <input name="city" type="text" />
-        </div>
-        <div>
-          <button type="submit">Save</button>
-        </div>
-      </fieldset>
-    </form>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+      <% users.forEach( function (user) { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= user.city %></td>
+        <td style="display: flex; align-items: center;">
+          <a href="/update/<%= user.id %>">Edit</a>
+          <form action="delete/<%= user.id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
   </body>
 </html>
