@@ -1,44 +1,33 @@
 const connection = require("../config/database");
+const User = require("../models/user");
 
 const getAllUsers = async () => {
-  return await connection.query("SELECT * FROM Users u");
+  return await User.find({});
 };
 
 const createUser = async (email, name, city) => {
-  return await connection.query(
-    `
-    INSERT INTO Users (email, name, city)
-    VALUES (?,?,?)
-    `,
-    [email, name, city]
-  );
+  await User.create({ email, name, city });
 };
 
 const getUserById = async (id) => {
-  return await connection.query(
-    `
-    SELECT * FROM Users WHERE id = ?
-    `,
-    [id]
-  );
+  return await User.findById(id).exec();
 };
 
 const updateUser = async (id, email, name, city) => {
-  return await connection.query(
-    `
-    UPDATE Users SET email = ?, name = ?, city = ? WHERE id = ?
-    `,
-    [email, name, city, id]
+  return await User.updateOne(
+    { _id: id },
+    { email: email, name: name, city: city }
   );
 };
 
 const deleteUser = async (id) => {
-  return await connection.query(
-    `
-    DELETE FROM Users WHERE id = ?
-    `,
-    [id]
-  );
+  return await User.deleteOne({ _id: id });
 };
 
-module.exports = { getAllUsers, createUser, getUserById, updateUser, deleteUser };
+module.exports = {
+  getAllUsers,
+  createUser,
+  getUserById,
+  updateUser,
+  deleteUser,
+};
