@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express"); // commonjs
 const configViewEngine = require("./config/viewEngine");
 const webRoutes = require("./routes/web");
+const connection = require('./config/database')
 
 const app = express(); // app express
 const port = process.env.PORT || 8888; // port
@@ -16,6 +17,9 @@ configViewEngine(app);
 
 // config routes
 app.use("/", webRoutes);
+
+// test connection
+connection();
 
 app.listen(port, hostname, () => {
   console.log(`App listening on port ${port}`);
