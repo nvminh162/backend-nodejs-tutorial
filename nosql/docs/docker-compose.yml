@@ -1,0 +1,31 @@
+services:
+  mongodb:
+    image: mongo:5.0.15
+    container_name: mongodb-nvminh162
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+  #
+  mongo-express:
+    image: ghcr.io/blackthornyugen/mongo-express-docker:v1.0.0
+    container_name: mexpress-nvminh162
+    environment:
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_URL=mongodb://root:123456@mongodb:27017/?authSource=admin
+      - ME_CONFIG_BASICAUTH_USERNAME=user
+      - ME_CONFIG_BASICAUTH_PASSWORD=123456
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+    ports:
+      - "9000:8081"
+#
+volumes:
+  mongodb_data_container:
+
+    # docker compose -p nvminh162-mongodb up -d
