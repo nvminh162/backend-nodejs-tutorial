@@ -5,9 +5,10 @@ const {
   updateUser,
   deleteUser,
 } = require("../services/user.service");
+const User = require("../models/user");
 
 const getHomePage = async (req, res) => {
-  const [results, fields] = await getAllUsers();
+  let results = [];
   res.render("home", { users: results });
 };
 
@@ -17,8 +18,11 @@ const getCreatePage = (req, res) => {
 
 const postCreateUser = async (req, res) => {
   const { email, name, city } = req.body;
-  let [results, fields] = await createUser(email, name, city);
-  console.log(results);
+  await User.create({
+    name,
+    email,
+    city,
+  });
   res.redirect("/");
 };
 
@@ -42,11 +46,12 @@ const postDeleteUser = async (req, res) => {
   let [results, fields] = await deleteUser(id);
   console.log(results);
   res.redirect("/");
-};module.exports = {
+};
+module.exports = {
   getHomePage,
   getCreatePage,
   postCreateUser,
   getUpdatePage,
   postUpdateUser,
-  postDeleteUser
+  postDeleteUser,
 };
