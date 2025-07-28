@@ -3,6 +3,7 @@ const express = require("express"); // commonjs
 const configViewEngine = require("./config/viewEngine");
 const webRoutes = require("./routes/web");
 const connection = require("./config/database");
+const apiRoutes = require("./routes/api")
 
 const app = express(); // app express
 const port = process.env.PORT || 8888; // port
@@ -17,6 +18,7 @@ configViewEngine(app);
 
 // config routes
 app.use("/", webRoutes);
+app.use("/v1/api", apiRoutes);
 
 (async () => {
   // test connection

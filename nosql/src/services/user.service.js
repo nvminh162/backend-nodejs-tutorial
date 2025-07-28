@@ -1,4 +1,3 @@
-const connection = require("../config/database");
 const User = require("../models/user");
 
 const getAllUsers = async () => {
@@ -6,7 +5,7 @@ const getAllUsers = async () => {
 };
 
 const createUser = async (email, name, city) => {
-  await User.create({ email, name, city });
+  return await User.create({ email, name, city });
 };
 
 const getUserById = async (id) => {
