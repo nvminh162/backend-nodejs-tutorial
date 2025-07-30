@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "5b294e88-cf40-48d5-bb4b-28aa6e552aa8",
+		"name": "nodejs-pro-sql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40740215"
+	},
+	"item": [
+		{
+			"name": "get all user api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJudm1pbmgxNjJAZ21haWwuY29tIiwiYWNjb3VudFR5cGUiOiJTWVNURU0iLCJhdmF0YXIiOm51bGwsInJvbGUiOnsiaWQiOjIsIm5hbWUiOiJVU0VSIiwiZGVzY3JpcHRpb24iOiJVc2VyIHRow7RuZyB0aMaw4budbmcifSwiaWF0IjoxNzUyNTk2NDU1LCJleHAiOjE3ODQxMzI0NTV9.jBah4GUKsjK77MN0JEUh5hVzdPtdX5oVp34i8PIa5Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJudm1pbmgxNjJAZ21haWwuY29tIiwiYWNjb3VudFR5cGUiOiJTWVNURU0iLCJhdmF0YXIiOm51bGwsInJvbGVJZCI6MiwiaWF0IjoxNzUyNTk2MzAxLCJleHAiOjE3ODQxMzIzMDF9.R68fCgAE4fQWdBvewbahMU6XZ4kzsgkXkXvVCjQJbqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"nvminh162\",\r\n    \"address\": \"137/2 TBG TP HCM\",\r\n    \"phone\": \"0353 999 999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"nvminh162@gmail.com\",\r\n    \"password\": \"nvminh162\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJudm1pbmgxNjJAZ21haWwuY29tIiwiYWNjb3VudFR5cGUiOiJTWVNURU0iLCJhdmF0YXIiOm51bGwsInJvbGUiOnsiaWQiOjIsIm5hbWUiOiJVU0VSIiwiZGVzY3JpcHRpb24iOiJVc2VyIHRow7RuZyB0aMaw4budbmcifSwiaWF0IjoxNzUyNTk2NDU1LCJleHAiOjE3ODQxMzI0NTV9.jBah4GUKsjK77MN0JEUh5hVzdPtdX5oVp34i8PIa5Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

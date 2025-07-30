@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "f55528fa-d18a-4a86-9fcb-bbf9de8b0c0f",
-		"name": "nodejs-pro-2",
+		"name": "nodejs-pro-nosql",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40740215"
 	},
@@ -19,32 +19,32 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "address",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "image",
-									"value": "",
-									"type": "text"
+									"type": "file",
+									"src": []
 								},
 								{
 									"key": "description",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								}
 							]
@@ -60,6 +60,36 @@
 								"v1",
 								"api",
 								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Array Customers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customers\": [\r\n        {\r\n            \"name\": \"@nvminh162\",\r\n            \"email\": \"nvminh162@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh163\",\r\n            \"email\": \"nvminh163@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh164\",\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        },\r\n        {\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/customers-many",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"customers-many"
 							]
 						}
 					},
