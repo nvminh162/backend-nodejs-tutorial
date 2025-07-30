@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customers\": [\r\n        {\r\n            \"name\": \"@nvminh162\",\r\n            \"email\": \"nvminh162@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh163\",\r\n            \"email\": \"nvminh163@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh164\",\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        },\r\n        {\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"customers\": [\r\n        {\r\n            \"name\": \"@nvminh162\",\r\n            \"email\": \"nvminh162@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh163\",\r\n            \"email\": \"nvminh163@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh164\",\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,6 +90,65 @@
 								"v1",
 								"api",
 								"customers-many"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "description",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"customers"
 							]
 						}
 					},

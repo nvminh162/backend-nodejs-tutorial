@@ -1,11 +1,19 @@
 const {
   createCustomerService,
   createArrayCustomerService,
+  getAllCustomersService,
 } = require("../services/customer.service");
 const { uploadSingleFile } = require("../services/file.service");
 
 // {key: value}
 module.exports = {
+  getCustomersAPI: async (req, res) => {
+    const customers = await getAllCustomersService();
+    res.status(200).json({
+      EC: 0,
+      data: customers,
+    });
+  },
   postCreateCustomer: async (req, res) => {
     let { name, address, phone, email, description } = req.body;
     let imageURL = "";
