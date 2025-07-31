@@ -4,6 +4,7 @@ const {
   getAllCustomersService,
   updateCustomersService,
   deleteACustomerService,
+  deleteArrayCustomerService,
 } = require("../services/customer.service");
 const { uploadSingleFile } = require("../services/file.service");
 
@@ -24,7 +25,7 @@ module.exports = {
       data: result,
     });
   },
-  postCreateCustomer: async (req, res) => {
+  postCreateCustomerAPI: async (req, res) => {
     let { name, address, phone, email, description } = req.body;
     let imageURL = "";
 
@@ -51,7 +52,7 @@ module.exports = {
     });
   },
   //bulk customer/ batch customer
-  postCreateArrayCustomers: async (req, res) => {
+  postCreateArrayCustomersAPI: async (req, res) => {
     let customers = await createArrayCustomerService(req.body.customers);
 
     if (customers) {
@@ -74,4 +75,12 @@ module.exports = {
       data: result,
     });
   },
+  deleteArrayCustomerAPI: async (req, res) => {
+    let ids = req.body.customersId;
+    let result = await deleteArrayCustomerService(ids);
+    return res.status(200).json({
+      EC: 0,
+      data: result,
+    });
+  }
 };

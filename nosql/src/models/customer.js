@@ -13,7 +13,15 @@ const customerSchema = new mongoose.Schema(
     image: String,
     description: String,
   },
-  { timestamp: true }
+  {
+
+    timestamp: true, //createAt, updateAt
+    // statics: {
+    //   findByNvminh162(name) {
+    //     return this.find({ name: new RegExp(name, 'i') });
+    //   }
+    // }
+  }
 );
 
 customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' }); //config deleted method
