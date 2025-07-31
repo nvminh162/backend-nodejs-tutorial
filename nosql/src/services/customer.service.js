@@ -9,6 +9,20 @@ module.exports = {
       return null;
     }
   },
+  updateCustomersService: async (id, name, email, address) => {
+    try {
+      return await Customer.updateOne({ _id: id }, { name, email, address });
+    } catch (error) {
+      return null;
+    }
+  },
+  deleteACustomerService: async (id) => {
+    try {
+      return await Customer.deleteById(id);
+    } catch (error) {
+      return null;
+    }
+  },
   createCustomerService: async (customerData) => {
     try {
       return await Customer.create(customerData);
