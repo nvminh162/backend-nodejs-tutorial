@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customers\": [\r\n        {\r\n            \"name\": \"@nvminh162\",\r\n            \"email\": \"nvminh162@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh163\",\r\n            \"email\": \"nvminh163@gmail.com\"\r\n        },\r\n        {\r\n            \"name\": \"@nvminh164\",\r\n            \"email\": \"nvminh164@gmail.com\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n  \"customers\": [\r\n    {\r\n      \"name\": \"@nvminh162\",\r\n      \"address\": \"hn\",\r\n      \"phone\": \"0901234567\",\r\n      \"email\": \"nvminh162@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh162.jpg\",\r\n      \"description\": \"Khách hàng thân thiết từ năm 2020\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh163\",\r\n      \"address\": \"hcm\",\r\n      \"phone\": \"0902345678\",\r\n      \"email\": \"nvminh163@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh163.jpg\",\r\n      \"description\": \"Khách hàng tiềm năng, yêu thích công nghệ\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh164\",\r\n      \"address\": \"hn\",\r\n      \"phone\": \"0903456789\",\r\n      \"email\": \"nvminh164@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh164.jpg\",\r\n      \"description\": \"Khách hàng doanh nghiệp, thường xuyên đặt hàng số lượng lớn\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh165\",\r\n      \"address\": \"hcm\",\r\n      \"phone\": \"0904567890\",\r\n      \"email\": \"nvminh165@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh165.jpg\",\r\n      \"description\": \"Khách hàng mới, đăng ký trong tháng 8\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh166\",\r\n      \"address\": \"hn\",\r\n      \"phone\": \"0905678901\",\r\n      \"email\": \"nvminh166@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh166.jpg\",\r\n      \"description\": \"Thường xuyên phản hồi tốt về dịch vụ\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh167\",\r\n      \"address\": \"hcm\",\r\n      \"phone\": \"0906789012\",\r\n      \"email\": \"nvminh167@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh167.jpg\",\r\n      \"description\": \"Đã tham gia chương trình khách hàng VIP\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh168\",\r\n      \"address\": \"hn\",\r\n      \"phone\": \"0907890123\",\r\n      \"email\": \"nvminh168@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh168.jpg\",\r\n      \"description\": \"Thường đặt hàng vào các dịp khuyến mãi\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh169\",\r\n      \"address\": \"hcm\",\r\n      \"phone\": \"0908901234\",\r\n      \"email\": \"nvminh169@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh169.jpg\",\r\n      \"description\": \"Khách hàng lâu năm, đáng tin cậy\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh170\",\r\n      \"address\": \"hn\",\r\n      \"phone\": \"0909012345\",\r\n      \"email\": \"nvminh170@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh170.jpg\",\r\n      \"description\": \"Thường thanh toán qua chuyển khoản\"\r\n    },\r\n    {\r\n      \"name\": \"@nvminh171\",\r\n      \"address\": \"hcm\",\r\n      \"phone\": \"0910123456\",\r\n      \"email\": \"nvminh171@gmail.com\",\r\n      \"image\": \"https://example.com/images/nvminh171.jpg\",\r\n      \"description\": \"Có nhu cầu tư vấn sản phẩm định kỳ\"\r\n    }\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -139,6 +139,70 @@
 							]
 						},
 						"url": {
+							"raw": "http://localhost:8081/v1/api/customers?limit=3&page=2&name=/nvminh/&address=hcm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "name",
+									"value": "/nvminh/"
+								},
+								{
+									"key": "address",
+									"value": "hcm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customers",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "688a4b63104797373b76d328",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
 							"raw": "http://localhost:8081/v1/api/customers",
 							"protocol": "http",
 							"host": [
@@ -149,6 +213,67 @@
 								"v1",
 								"api",
 								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "688b86197944ec0512d39d63",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Array Customers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customersId\": [\r\n        \"688b86197944ec0512d39d63\",\r\n        \"688b86197944ec0512d39d64\",\r\n        \"688b86197944ec0512d39d65\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/customers-many",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"customers-many"
 							]
 						}
 					},
@@ -321,6 +446,52 @@
 								"api",
 								"users",
 								"688791371e74092f6a3c1054"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Query String",
+			"item": [
+				{
+					"name": "req.query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJudm1pbmgxNjJAZ21haWwuY29tIiwiYWNjb3VudFR5cGUiOiJTWVNURU0iLCJhdmF0YXIiOm51bGwsInJvbGUiOnsiaWQiOjIsIm5hbWUiOiJVU0VSIiwiZGVzY3JpcHRpb24iOiJVc2VyIHRow7RuZyB0aMaw4budbmcifSwiaWF0IjoxNzUyNTk2NDU1LCJleHAiOjE3ODQxMzI0NTV9.jBah4GUKsjK77MN0JEUh5hVzdPtdX5oVp34i8PIa5Xg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/info?name=1&address=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"info"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "1"
+								},
+								{
+									"key": "address",
+									"value": "2"
+								}
 							]
 						}
 					},
