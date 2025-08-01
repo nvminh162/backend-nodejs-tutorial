@@ -28,17 +28,16 @@ app.use("/", webRoutes);
 app.use("/v1/api", apiRoutes);
 
 (async () => {
+  // using mongodb driver
+  const client = new MongoClient("mongodb://root:123456@localhost:27018/?authSource=admin");
+  await client.connect();
+  console.log('Connected successfully to server');
+  const db = client.db("nvminh162");
+  const collection = db.collection('customers');
+  collection.insertOne({ "name": "Nguyen Van Minh" })
+
   // using mongoose
   // await connection();
-
-  // using mongodb driver
-  const URL = process.env.DB_HOST_WITH_DRIVER;
-  const client = new MongoClient(URL);
-  await client.connect(); 
-  console.log('Connected successfully to server');
-  // const db = client.db(dbName);
-  // const collection = db.collection('documents');
-
   app.listen(port, hostname, () => {
     console.log(`Backend @nvminh162 listening on port ${port}`);
   });
