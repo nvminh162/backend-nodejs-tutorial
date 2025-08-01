@@ -11,11 +11,11 @@ const { uploadSingleFile } = require("../services/file.service");
 // {key: value}
 module.exports = {
   getCustomersAPI: async (req, res) => {
-    let { limit, page } = req.query;
+    let { limit, page, name } = req.query;
     let result = null;
 
     if(limit && page) {
-      result = await getAllCustomersService(limit, page);
+      result = await getAllCustomersService(limit, page, name);
     } else {
       // result = await getAllCustomersService();
     }

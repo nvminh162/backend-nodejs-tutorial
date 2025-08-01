@@ -14,8 +14,7 @@ const customerSchema = new mongoose.Schema(
     description: String,
   },
   {
-
-    timestamp: true, //createAt, updateAt
+    timestamps: true, //createdAt, updatedAt
     // statics: {
     //   findByNvminh162(name) {
     //     return this.find({ name: new RegExp(name, 'i') });
