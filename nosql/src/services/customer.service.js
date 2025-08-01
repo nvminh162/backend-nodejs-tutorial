@@ -1,9 +1,17 @@
 const Customer = require("../models/customer");
 
 module.exports = {
-  getAllCustomersService: async () => {
+  getAllCustomersService: async (limit, page) => {
     try {
-      return await Customer.find({});
+      let result = null;
+
+      if (limit && page) {
+        let offset = (page - 1) * limit;
+        result = await Customer.find({}).skip(offset).limit(limit).exec();
+      } else {
+        result = await Customer.find({});
+      }
+      return result;
     } catch (error) {
       // console.log(error);
       return null;

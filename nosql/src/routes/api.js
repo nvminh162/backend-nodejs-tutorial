@@ -37,4 +37,11 @@ routerAPI.post("/customers", postCreateCustomerAPI);
 routerAPI.post("/customers-many", postCreateArrayCustomersAPI);
 routerAPI.delete("/customers-many", deleteArrayCustomerAPI);
 
+routerAPI.get("/info", (req, res) => {
+  res.status(200).json({
+    EC: 0,
+    data: req.query,
+  });
+});
+
 module.exports = routerAPI;

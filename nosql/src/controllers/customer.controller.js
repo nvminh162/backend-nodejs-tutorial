@@ -11,10 +11,18 @@ const { uploadSingleFile } = require("../services/file.service");
 // {key: value}
 module.exports = {
   getCustomersAPI: async (req, res) => {
-    const customers = await getAllCustomersService();
+    let { limit, page } = req.query;
+    let result = null;
+
+    if(limit && page) {
+      result = await getAllCustomersService(limit, page);
+    } else {
+      // result = await getAllCustomersService();
+    }
+
     return res.status(200).json({
       EC: 0,
-      data: customers,
+      data: result,
     });
   },
   putUpdateCustomersAPI: async (req, res) => {
@@ -82,5 +90,5 @@ module.exports = {
       EC: 0,
       data: result,
     });
-  }
+  },
 };
