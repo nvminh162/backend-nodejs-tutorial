@@ -17,7 +17,7 @@ module.exports = {
     if (limit && page) {
       result = await getAllCustomersService(limit, page, name, req.query);
     } else {
-      // result = await getAllCustomersService();
+      result = await getAllCustomersService();
     }
 
     return res.status(200).json({
