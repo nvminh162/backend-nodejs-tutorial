@@ -11,8 +11,18 @@ const {
   deleteACustomerAPI,
   deleteArrayCustomerAPI,
 } = require("../controllers/customer.controller");
-const { postCreateProjectAPI, getProjectsAPI } = require("../controllers/project.controller");
-const { getUsersAPI, postCreateUserAPI, putUpdateUserAPI, deleteUserAPI } = require("../controllers/user.controller");
+const {
+  postCreateProjectAPI,
+  getProjectsAPI,
+  putUpdateProjectAPI,
+  deleteProjectAPI,
+} = require("../controllers/project.controller");
+const {
+  getUsersAPI,
+  postCreateUserAPI,
+  putUpdateUserAPI,
+  deleteUserAPI,
+} = require("../controllers/user.controller");
 
 const routerAPI = express.Router();
 
@@ -38,8 +48,10 @@ routerAPI.delete("/customers", deleteACustomerAPI);
 routerAPI.delete("/customers-many", deleteArrayCustomerAPI);
 
 // Project
-routerAPI.get("/projects", getProjectsAPI)
-routerAPI.post("/projects", postCreateProjectAPI)
+routerAPI.get("/projects", getProjectsAPI);
+routerAPI.post("/projects", postCreateProjectAPI);
+routerAPI.put("/projects", putUpdateProjectAPI);
+routerAPI.delete("/projects", deleteProjectAPI);
 
 // Test Params Request from POSTMAN
 routerAPI.get("/info", (req, res) => {

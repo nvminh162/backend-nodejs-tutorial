@@ -31,5 +31,24 @@ module.exports = {
 
       return await findProject.save();
     }
+    if (data.type === "REMOVE-USERS") {
+      let findProject = await Project.findById(data.projectId).exec();
+
+      // myProject.usersInfo = myProject.usersInfo.filter(item => !data.usersArr.includes(item));
+      // console.log(">>> myProject.usersInfo ", myProject.usersInfo, data.usersArr);
+
+      for (let i = 0; i < data.usersArr.length; i++) {
+        findProject.usersInfo.pull(data.usersArr[i]);
+      }
+
+      let newResult = await findProject.save();
+      return newResult;
+    }
+  },
+  updateProjectService: async (data) => {
+    return await Project.updateOne({ _id: data.id }, { ...data });
+  },
+  deleteProjectsService: async (id) => {
+    return await Project.deleteById(id);
   },
 };
