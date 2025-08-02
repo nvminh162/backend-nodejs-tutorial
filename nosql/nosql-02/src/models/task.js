@@ -34,6 +34,6 @@ const taskSchema = new mongoose.Schema(
 
 taskSchema.plugin(mongoose_delete, { overrideMethods: "all" }); //config deleted method (soft delete)
 
-const Task = mongoose.model("Task", taskSchema);
+const Task = mongoose.model("task", taskSchema);
 
 module.exports = Task;

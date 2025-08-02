@@ -14,6 +14,6 @@ const userSchema = new mongoose.Schema(
 
 userSchema.plugin(mongoose_delete, { overrideMethods: "all" }); //config deleted method (soft delete)
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
 
 module.exports = User;

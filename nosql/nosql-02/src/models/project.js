@@ -23,8 +23,8 @@ const projectSchema = new mongoose.Schema(
     description: String,
     customerInfo: customerSchema,
     leaderInfo: userSchema,
-    usersInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    tasksInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }],
+    usersInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user' }],
+    tasksInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'task' }],
   },
   {
     timestamps: true, //createdAt, updatedAt
@@ -33,6 +33,6 @@ const projectSchema = new mongoose.Schema(
 
 projectSchema.plugin(mongoose_delete, { overrideMethods: 'all' }); //config deleted method (soft delete)
 
-const Project = mongoose.model("Project", projectSchema);
+const Project = mongoose.model("project", projectSchema);
 
 module.exports = Project;

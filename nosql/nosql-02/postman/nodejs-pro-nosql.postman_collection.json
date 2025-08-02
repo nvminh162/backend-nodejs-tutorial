@@ -24,17 +24,17 @@
 								},
 								{
 									"key": "address",
-									"value": "1",
+									"value": "",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "1",
+									"value": "",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "1",
+									"value": "",
 									"type": "text"
 								},
 								{
@@ -139,7 +139,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8081/v1/api/customers?limit=3&page=2&name=/nvminh/&address=hcm",
+							"raw": "http://localhost:8081/v1/api/customers",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -153,19 +153,23 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "3"
+									"value": "3",
+									"disabled": true
 								},
 								{
 									"key": "page",
-									"value": "2"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "name",
-									"value": "/nvminh/"
+									"value": "/@nvminh162/",
+									"disabled": true
 								},
 								{
 									"key": "address",
-									"value": "hcm"
+									"value": "hcm,hn",
+									"disabled": true
 								}
 							]
 						}
@@ -334,13 +338,24 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "nvminh162@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Nguyen Van Minh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "New York, USA",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:8081/v1/api/users",
@@ -368,22 +383,22 @@
 							"urlencoded": [
 								{
 									"key": "id",
-									"value": "68878d8b9bbf300227c78841",
+									"value": "688dd1d9d53008dbe35f9207",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "1",
+									"value": "paul162@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "2",
+									"value": "Paul Nguyen",
 									"type": "text"
 								},
 								{
 									"key": "city",
-									"value": "3",
+									"value": "New York, US",
 									"type": "text"
 								}
 							]
@@ -409,33 +424,8 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "68878d8b9bbf300227c78841",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "city",
-									"value": "3",
-									"type": "text"
-								}
-							]
-						},
 						"url": {
-							"raw": "http://localhost:8081/v1/api/users/688791371e74092f6a3c1054",
+							"raw": "http://localhost:8081/v1/api/users/688dd281d53008dbe35f920b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -445,7 +435,7 @@
 								"v1",
 								"api",
 								"users",
-								"688791371e74092f6a3c1054"
+								"688dd281d53008dbe35f920b"
 							]
 						}
 					},
@@ -454,7 +444,7 @@
 			]
 		},
 		{
-			"name": "Query String",
+			"name": "Test Query String",
 			"item": [
 				{
 					"name": "req.query",
@@ -500,66 +490,171 @@
 			]
 		},
 		{
-			"name": "Upload Single File",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "image",
-							"type": "file",
-							"src": []
+			"name": "Project",
+			"item": [
+				{
+					"name": "Create Project Empty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"type\": \"EMPTY-PROJECT\", \r\n        \"name\": \"test project 1\", \r\n        \"startDate\": \"24/12/2022\", \r\n        \"endDate\": \"25/12/2023\", \r\n        \"description\": \"just a test project\", \r\n        \"customerInfo\": { \r\n             \"name\": \"nvminh1602\", \r\n            \"phone\": \"0123456789\", \r\n            \"email\": \"nvminh1602@gmail.com\" \r\n        }, \r\n        \"leaderInfo\": { \r\n            \"name\": \"nvminh162\", \r\n            \"email\": \"nvminh162@gmail.com\" \r\n        } \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"projects"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/v1/api/file",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"v1",
-						"api",
-						"file"
-					]
+				{
+					"name": "Add User to Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"type\": \"ADD-USERS\", \r\n    \"projectId\": \"688dce9acc04c7af43decd96\", \r\n    \"usersArr\": [\"688dd1b7d53008dbe35f9205\", \"688dd1d9d53008dbe35f9207\"] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/projects?page=1&limit=20&populate=usersInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "populate",
+									"value": "usersInfo"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Upload Multiple Files",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "image",
-							"type": "file",
-							"src": []
+			"name": "File Handler",
+			"item": [
+				{
+					"name": "Upload Single File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"file"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/v1/api/files",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"v1",
-						"api",
-						"files"
-					]
+				{
+					"name": "Upload Multiple Files",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/files",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"files"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
