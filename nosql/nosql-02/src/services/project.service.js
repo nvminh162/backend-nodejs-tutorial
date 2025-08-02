@@ -44,6 +44,15 @@ module.exports = {
       let newResult = await findProject.save();
       return newResult;
     }
+    if (data.type === "ADD-TASKS") {
+      let findProject = await Project.findById(data.projectId).exec();
+      
+      for (let i = 0; i < data.taskArr.length; i++) {
+        findProject.tasksInfo.push(data.taskArr[i]);
+      }
+      let newResult = await findProject.save();
+      return newResult;
+    }
   },
   updateProjectService: async (data) => {
     return await Project.updateOne({ _id: data.id }, { ...data });

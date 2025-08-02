@@ -23,6 +23,7 @@ const {
   putUpdateUserAPI,
   deleteUserAPI,
 } = require("../controllers/user.controller");
+const { getTasksAPI, postCreateTaskAPI, putUpdateTaskAPI, deleteTaskAPI } = require("../controllers/task.controller");
 
 const routerAPI = express.Router();
 
@@ -52,6 +53,12 @@ routerAPI.get("/projects", getProjectsAPI);
 routerAPI.post("/projects", postCreateProjectAPI);
 routerAPI.put("/projects", putUpdateProjectAPI);
 routerAPI.delete("/projects", deleteProjectAPI);
+
+// Task
+routerAPI.get("/tasks", getTasksAPI);
+routerAPI.post("/tasks", postCreateTaskAPI);
+routerAPI.put("/tasks", putUpdateTaskAPI);
+routerAPI.delete("/tasks", deleteTaskAPI);
 
 // Test Params Request from POSTMAN
 routerAPI.get("/info", (req, res) => {
