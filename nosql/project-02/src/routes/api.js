@@ -1,12 +1,8 @@
 const express = require("express");
 const {
-  getUsersAPI,
-  postCreateUserAPI,
-  putUpdateUserAPI,
-  deleteUserAPI,
   postUploadSingleFileAPI,
   postUploadMultipleFilesAPI,
-} = require("../controllers/api.controller");
+} = require("../controllers/file.controller");
 const {
   getCustomersAPI,
   putUpdateCustomersAPI,
@@ -19,24 +15,20 @@ const {
 const routerAPI = express.Router();
 
 routerAPI.get("/", (req, res) => {
-  res.send("hello");
+  res.send("Hello, World! - API from @nvminh162 with love <3");
 });
-
-routerAPI.get("/users", getUsersAPI);
-routerAPI.post("/users", postCreateUserAPI);
-routerAPI.put("/users", putUpdateUserAPI);
-routerAPI.delete("/users", deleteUserAPI);
 
 routerAPI.post("/file", postUploadSingleFileAPI);
 routerAPI.post("/files", postUploadMultipleFilesAPI);
 
 routerAPI.get("/customers", getCustomersAPI);
-routerAPI.put("/customers", putUpdateCustomersAPI);
-routerAPI.delete("/customers", deleteACustomerAPI);
 routerAPI.post("/customers", postCreateCustomerAPI);
 routerAPI.post("/customers-many", postCreateArrayCustomersAPI);
+routerAPI.put("/customers", putUpdateCustomersAPI);
+routerAPI.delete("/customers", deleteACustomerAPI);
 routerAPI.delete("/customers-many", deleteArrayCustomerAPI);
 
+// Test Params Request from POSTMAN
 routerAPI.get("/info", (req, res) => {
   res.status(200).json({
     EC: 0,
