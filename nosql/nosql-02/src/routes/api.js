@@ -11,6 +11,8 @@ const {
   deleteACustomerAPI,
   deleteArrayCustomerAPI,
 } = require("../controllers/customer.controller");
+const { postCreateProjectAPI } = require("../controllers/project.controller");
+const { getUsersAPI, postCreateUserAPI, putUpdateUserAPI, deleteUserAPI } = require("../controllers/user.controller");
 
 const routerAPI = express.Router();
 
@@ -21,12 +23,22 @@ routerAPI.get("/", (req, res) => {
 routerAPI.post("/file", postUploadSingleFileAPI);
 routerAPI.post("/files", postUploadMultipleFilesAPI);
 
+// user
+routerAPI.get("/users", getUsersAPI);
+routerAPI.post("/users", postCreateUserAPI);
+routerAPI.put("/users", putUpdateUserAPI);
+routerAPI.delete("/users/:id", deleteUserAPI);
+
+// Customer
 routerAPI.get("/customers", getCustomersAPI);
 routerAPI.post("/customers", postCreateCustomerAPI);
 routerAPI.post("/customers-many", postCreateArrayCustomersAPI);
 routerAPI.put("/customers", putUpdateCustomersAPI);
 routerAPI.delete("/customers", deleteACustomerAPI);
 routerAPI.delete("/customers-many", deleteArrayCustomerAPI);
+
+// Project
+routerAPI.post("/projects", postCreateProjectAPI)
 
 // Test Params Request from POSTMAN
 routerAPI.get("/info", (req, res) => {

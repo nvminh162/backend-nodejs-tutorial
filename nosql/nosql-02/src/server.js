@@ -23,6 +23,6 @@ APP.use("/v1/api", apiRoutes);
 (async () => {
   await connection();
   APP.listen(PORT, HOSTNAME, () => {
-    console.log(`Backend @nvminh162 listening on port: ${PORT}`);
+    console.log(`Backend Server @nvminh162 listening on port: ${PORT}`);
   });
 })();
