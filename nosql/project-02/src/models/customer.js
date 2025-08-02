@@ -15,16 +15,11 @@ const customerSchema = new mongoose.Schema(
   },
   {
     timestamps: true, //createdAt, updatedAt
-    // statics: {
-    //   findByNvminh162(name) {
-    //     return this.find({ name: new RegExp(name, 'i') });
-    //   }
-    // }
   }
 );
 
-customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' }); //config deleted method
+customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' }); //config deleted method (soft delete)
 
-const Customer = mongoose.model("customer", customerSchema);
+const Customer = mongoose.model("Customer", customerSchema);
 
 module.exports = Customer;
