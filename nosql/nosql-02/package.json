@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nvminh162/backend-tutorial.git"
+    "url": "git+https://github.com/nvminh162/backend-nodejs-tutorial.git"
   },
   "keywords": [
     "nodejs",
@@ -19,9 +19,9 @@
   "author": "@nvminh162",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nvminh162/backend-tutorial/issues"
+    "url": "https://github.com/nvminh162/backend-nodejs-tutorial/issues"
   },
-  "homepage": "https://github.com/nvminh162/backend-tutorial#readme",
+  "homepage": "https://github.com/nvminh162/backend-nodejs-tutorial#readme",
   "dependencies": {
     "api-query-params": "5.4.0",
     "dotenv": "16.0.3",
